@@ -1,15 +1,12 @@
 {
-  "name": "react-ui",
+  "name": "advent-of-code-2023",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/react-ui/src",
+  "sourceRoot": "libs/advent-of-code/2023/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "lint": {},
     "test": {},
-    "storybook": {},
-    "typecheck": {},
-    "test-storybook": {},
-    "build-storybook": {}
+    "typecheck": {}
   }
 }

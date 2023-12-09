@@ -45,8 +45,14 @@
       "dependsOn": ["typecheck", "^test"],
       "outputs": ["{options.reportsDirectory}"],
       "options": {
+        "config": "{workspaceRoot}/libs/config/vite.config.ts",
         "passWithNoTests": true,
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
+        }
       }
     },
     "lint": {

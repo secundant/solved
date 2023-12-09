@@ -1,7 +1,5 @@
 {
-  "name": "@my-org/config",
-  "type": "commonjs",
+  "name": "@solved/config",
   "version": "0.0.1",
-  "description": "Shared configuration",
-  "packageManager": "yarn@4.0.2"
+  "sideEffects": false
 }

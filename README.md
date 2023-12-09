@@ -9,7 +9,7 @@
 
 > Project is in early development phase and contains some dirty moments
 
-[Visit our documentation](https://product-template.pages.dev/repo/intro) to get detailed information and
+[Visit our documentation](https://solved.pages.dev/repo/intro) to get detailed information and
 see like-a-real-world example of [apps/docs](./apps/docs) in one 👏
 
 - [Yarn 4](https://yarnpkg.com/getting-started/usage), a flexible package manager
@@ -79,7 +79,7 @@ so you don't need to add them in every package.
 
 So, if you want to add unit tests:
 
-1. `yarn add -D vitest` in target library folder or `yarn workspace @my-org/NAME add -D vitest` anywhere else
+1. `yarn add -D vitest` in target library folder or `yarn workspace @solved/NAME add -D vitest` anywhere else
 2. Add `vite.config.ts` - you can take configuration in [local "std" library](libs/std/vite.config.ts)
    or make it yourself as it shown [in vitest documentation](https://vitest.dev/config/)
 3. Add `"test": "vitest run"` to your library `package.json`

@@ -11,8 +11,8 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@my-org/react-ui/*": ["libs/react-ui/src/*.ts", "libs/react-ui/src/*/index.ts"],
-      "@my-org/std/*": ["libs/std/src/*.ts", "libs/std/src/*/index.ts"]
+      "@solved/react-ui/*": ["libs/react-ui/src/*.ts", "libs/react-ui/src/*/index.ts"],
+      "@solved/std/*": ["libs/std/src/*.ts", "libs/std/src/*/index.ts"]
     },
     "skipLibCheck": true,
     "importHelpers": false,
