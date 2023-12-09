@@ -1,0 +1,7 @@
+{
+  "name": "@my-org/std",
+  "description": "Standard JS enhancements library",
+  "packageManager": "yarn@4.0.2",
+  "version": "0.0.1",
+  "sideEffects": false
+}

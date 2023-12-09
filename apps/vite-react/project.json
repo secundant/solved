@@ -1,0 +1,21 @@
+{
+  "name": "vite-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/vite-react/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "dev": {},
+    "test": {},
+    "lint": {},
+    "typecheck": {},
+    "storybook": {},
+    "test-storybook": {},
+    "build-storybook": {},
+    "build": {
+      "executor": "@nx/vite:build"
+    },
+    "serve": {},
+    "preview": {}
+  }
+}

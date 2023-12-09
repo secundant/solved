@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "jsx": "preserve",
+    "lib": ["ES2023"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@my-org/react-ui/*": ["libs/react-ui/src/*.ts", "libs/react-ui/src/*/index.ts"],
+      "@my-org/std/*": ["libs/std/src/*.ts", "libs/std/src/*/index.ts"]
+    },
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "allowUnreachableCode": false,
+    "useDefineForClassFields": true,
+    "noFallthroughCasesInSwitch": true,
+    "suppressExcessPropertyErrors": false,
+    "pretty": true,
+    "noEmit": true,
+    "allowJs": false,
+    "sourceMap": false,
+    "noErrorTruncation": false
+  },
+  "exclude": ["node_modules", "tmp", "dist"]
+}

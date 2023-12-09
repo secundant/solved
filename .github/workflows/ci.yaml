@@ -1,0 +1,30 @@
+name: CI
+
+on: push
+
+jobs:
+  nx:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        uses: ./.github/actions/yarn-install
+
+      - uses: nrwl/nx-set-shas@v3
+
+      - name: Run NX checks
+        run: |
+          yarn nx format:check
+          yarn nx affected -t lint,test,build,typecheck --parallel 3

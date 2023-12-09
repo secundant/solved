@@ -1,0 +1,11 @@
+{
+  "name": "@my-org/docs",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.0.2",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  }
+}
