@@ -2664,9 +2664,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solved/config@workspace:libs/config":
+"@solved/advent-of-code-2023@workspace:libs/advent-of-code-2023":
   version: 0.0.0-use.local
-  resolution: "@solved/config@workspace:libs/config"
+  resolution: "@solved/advent-of-code-2023@workspace:libs/advent-of-code-2023"
   languageName: unknown
   linkType: soft
 

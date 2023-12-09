@@ -40,18 +40,20 @@
     },
     "test": {
       "cache": true,
-      "inputs": ["default", "^default"],
-      "executor": "@nx/vite:test",
-      "dependsOn": ["typecheck", "^test"],
-      "outputs": ["{options.reportsDirectory}"],
-      "options": {
-        "config": "{workspaceRoot}/libs/config/vite.config.ts",
-        "passWithNoTests": true,
-        "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}"
-      },
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "run",
       "configurations": {
         "watch": {
-          "watch": true
+          "command": "vitest --root {projectRoot} --watch"
+        },
+        "typecheck": {
+          "command": "vitest --root {projectRoot} --typecheck run"
+        },
+        "run": {
+          "command": "vitest --root {projectRoot} run"
+        },
+        "bench": {
+          "command": "vitest --root {projectRoot} bench"
         }
       }
     },
@@ -97,40 +99,6 @@
       "inputs": ["default", "^production"]
     },
     "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
-    "storybook": {
-      "cache": false,
-      "executor": "@nx/storybook:storybook",
-      "options": {
-        "port": 4400,
-        "configDir": "{projectRoot}/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "test-storybook": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "test-storybook -c {projectRoot}/.storybook --url=http://localhost:4400"
-      }
-    },
-    "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/{projectRoot}",
-        "configDir": "{projectRoot}/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      },
       "cache": true,
       "inputs": ["default", "^production"]
     }

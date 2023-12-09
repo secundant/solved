@@ -28,6 +28,7 @@
   "workspaces": [
     "apps/*",
     "libs/*",
+    "libs/advent-of-code/*",
     "tools/*"
   ],
   "scripts": {

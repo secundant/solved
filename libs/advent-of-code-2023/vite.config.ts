@@ -6,9 +6,11 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [nxViteTsPaths()],
   test: {
-    cache: {
-      dir: resolve(__dirname, '../../node_modules/.vitest'),
+    typecheck: {
+      ignoreSourceErrors: false,
     },
-    include: ['src/**/*.test.{ts,tsx}'],
+    cache: {
+      dir: '../../node_modules/.vitest',
+    },
   },
 });
