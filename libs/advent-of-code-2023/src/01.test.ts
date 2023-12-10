@@ -1,3 +1,5 @@
+import { iterableToArray } from '@solved/std/array';
+import { isNotNaN } from '@solved/std/guard';
 import { sum, toInt } from '@solved/std/shared';
 import { describe, expect, test } from 'vitest';
 import { loadInput, prepareInput } from './shared/input.ts';
@@ -13,18 +15,26 @@ import { loadInput, prepareInput } from './shared/input.ts';
  * What is the sum of all the calibration values?
  */
 
-const getDocumentValue = (input: string) => sum(input.split('\n').map(getLineValue));
-const getLineValue = (line: string) => {
-  const chars = Array.from(line);
+const getNumericDocumentValue = (input: string) =>
+  sum(input.split('\n').map(iterableToArray).map(getNumericLineValue));
+const getNumericLineValue = (chars: string[]) =>
+  toInt(chars.find(isNotNaN) + chars.findLast(isNotNaN)!);
 
-  return toInt(chars.find(isNumericChar) + chars.findLast(isNumericChar)!);
-};
-const isNumericChar = (char: string) => !Number.isNaN(toInt(char));
+const getSpellingOutDocumentValue = (input: string) =>
+  getNumericDocumentValue(
+    spellingOutDigits.reduce(
+      (acc, word, index) => acc.replaceAll(word, `${word[0]}${index + 1}${word.at(-1)}`),
+      input,
+    ),
+  );
+const spellingOutDigits = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
-describe('day 1', () => {
-  test('example', () => {
+describe('day 1', async () => {
+  const input = await loadInput(1);
+
+  test('part 1', async () => {
     expect(
-      getDocumentValue(
+      getNumericDocumentValue(
         prepareInput(`
 1abc2
 pqr3stu8vwx
@@ -33,9 +43,25 @@ treb7uchet
 `),
       ),
     ).toEqual(142);
+
+    expect(getNumericDocumentValue(input)).toMatchInlineSnapshot(`54450`);
   });
 
-  test('solution', async () => {
-    expect(getDocumentValue(await loadInput(1))).toMatchInlineSnapshot(`54450`);
+  test('part 2', async () => {
+    expect(
+      getSpellingOutDocumentValue(
+        prepareInput(`
+two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen
+`),
+      ),
+    ).toBe(281);
+
+    expect(getSpellingOutDocumentValue(input)).toMatchInlineSnapshot(`54265`);
   });
 });
