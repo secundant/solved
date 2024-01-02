@@ -19,5 +19,15 @@ export function fromRange<T>(
   end: number,
   fn: IteratorFn<T> = identity as IteratorFn<T>,
 ) {
-  return Array.from({ length: end - start + 1 }, (_, index) => fn(index + start));
+  return fromLength(end - start + 1, index => fn(index + start));
+}
+
+export function fromGrid<T>(
+  startY: number,
+  endY: number,
+  startX: number,
+  endX: number,
+  fn: (x: number, y: number) => T,
+): T[][] {
+  return fromRange(startY, endY, y => fromRange(startX, endX, x => fn(x, y)));
 }

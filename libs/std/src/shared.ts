@@ -3,6 +3,7 @@ export const isTruthy = Boolean as unknown as <T>(value: T | Falsy) => value is 
 
 export const toInt = (value: string) => Number.parseInt(value, 10);
 export const sum = (values: number[]) => values.reduce((a, b) => a + b, 0);
+export const multiply = (values: number[]) => values.reduce((a, b) => a * b, 1);
 
 export type Falsy = false | null | undefined | void | 0 | '';
 export type Truthy = Exclude<any, Falsy>;
